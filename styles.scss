@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+
+$dark-grey: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$very-dark-grey: hsl(0, 0%, 27%);
+$desktop: 1440px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Spartan", sans-serif;
+    position: relative;
+    font-size: 12px;
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        position: absolute;
+
+        img {
+            margin: 0px 60px;
+            width: 90px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+
+            li a {
+                text-decoration: none;
+                color: $white;
+                font-size: 12px;
+                margin-right: 25px;
+                position: relative;
+            }
+
+            a:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: $white;
+                visibility: hidden;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+                transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+            }
+
+            a:hover:before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .slider {
+        display: flex;
+
+        .flex {
+            flex: 0.5;
+            position: relative;
+        }
+
+        .img-slide {
+            flex: 0.63;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .description {
+            margin: 100px;
+            height: 100%;
+
+            .shop-btn {
+                background-color: transparent;
+                border: none;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: $black;
+                padding: 0;
+                margin-right: 25px;
+                margin-top: 20px;
+                font-weight: 500;
+                letter-spacing: 10px;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+
+                img {
+                    width: 35px;
+                }
+            }
+
+            h1 {
+                font-size: 35px;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 12px;
+                font-weight: 500;
+                opacity: 0.4;
+                line-height: 25px;
+            }
+        }
+
+        .btn {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: $black;
+
+            button {
+                background-color: transparent;
+                border: none;
+                width: 80px;
+                height: 80px;
+
+                &:hover {
+                    background-color: $very-dark-grey;
+                }
+            }
+        }
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 0.83fr 1fr;
+        column-gap: 50px;
+
+        .about {
+            align-self: center;
+
+            h2 {
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-size: 12px;
+                font-weight: 700
+            }
+
+            p {
+                line-height: 25px;
+                font-size: 12px;
+                opacity: 0.5;
+            }
+        }
+
+        .left-image .right-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
